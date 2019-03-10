@@ -13,8 +13,8 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
-module.exports.io = socketIO(server); // ese es el socket del lado del backend
-require('./sockets/socket');
+module.exports.io = socketIO(server); // ese es el socket del lado del backend, lo exporto para poderlo usar en el otro archivo
+require('./sockets/socket'); // require del otro archivo para importar toda la logica del socket
 
 
 server.listen(port, (err) => {
